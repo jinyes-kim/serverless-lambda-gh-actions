@@ -11,8 +11,9 @@ provider:
 plugins:
   - serverless-python-requirements
 
-package:
-  individually: true
+custom:
+  pythonRequirements:
+    dockerizePip: true
 
 functions:
   LambdaDemo:
