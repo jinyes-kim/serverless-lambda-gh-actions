@@ -5,7 +5,7 @@ frameworkVersion: 'v3'
 provider:
   name: aws
   runtime: python3.7
-  stage: dev
+  stage: ${sls:stage}
   region: ap-northeast-2
 
 plugins:

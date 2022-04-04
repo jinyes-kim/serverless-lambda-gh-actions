@@ -17,7 +17,8 @@ jobs:
       matrix:
         node: [ 14 ]
         serverless: [ 'v3' ]
-
+    env:
+      SLS_DEBUG: "*"
     steps:
 
       - name: Checkout
