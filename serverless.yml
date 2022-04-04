@@ -16,9 +16,9 @@ custom:
     dockerizePip: true
 
 functions:
-  LambdaDemo:
+  greeting:
     name: sls-lambda-gh-actions
-    handler: handler.greeting
+    handler: app/handler.greeting
     events:
       - http:
           path: /
