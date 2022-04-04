@@ -3,7 +3,8 @@ import pandas as pd
 
 
 def greeting(event, context):
-    dummy = pd.DataFrame({"name": ['jinung'], "age": [27]})
+    df= pd.DataFrame({"name": ["jinung"], "age": [27]})
+    dummy = df.to_json(orient='index')
 
     return {
         'statusCode': 200,
