@@ -1,12 +1,15 @@
-service: sls-lambda-gh-actions
+service: ${sls:stage}-sls-lambda-gh-actions
 
 frameworkVersion: 'v3'
 
 provider:
   name: aws
   runtime: python3.7
-  stage: ${sls:stage}
   region: ap-northeast-2
+  stage: ${sls:stage}
+  deploymentBucket:
+    name: ${sls:stage}-deployment-lambda
+    
 
 plugins:
   - serverless-python-requirements
@@ -17,7 +20,7 @@ custom:
 
 functions:
   greeting:
-    name: sls-lambda-gh-actions
+    name: ${sls:stage}-sls-lambda-gh-actions
     handler: app/handler.greeting
     events:
       - http:
